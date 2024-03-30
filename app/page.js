@@ -29,9 +29,9 @@ export default async function Home() {
           <Image
             src={urlFor(post.titleImage).url()}
             alt="Image"
-            width={500}
+            width={550}
             height={500}
-            className="rounded-t-lg h-[200px] object-cover"
+            className="rounded-t-lg h-[200px] object-cover w-full"
           />
           <CardContent className="mt-5">
             <h3 className="text-lg line-clamp-2 font-semibold">{post.title}</h3>

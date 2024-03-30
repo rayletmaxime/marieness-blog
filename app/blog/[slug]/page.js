@@ -19,7 +19,6 @@ async function getData(slug) {
 
 export default async function BlogArticle({ params, slug }) {
   const data = await getData(params.slug);
-  console.log(data);
 
   return (
     <div className="mt-8">
@@ -31,15 +30,16 @@ export default async function BlogArticle({ params, slug }) {
           {data.title}
         </span>
       </h1>
-
-      <Image
-        src={urlFor(data.titleImage).url()}
-        width={800}
-        height={800}
-        alt="Image de l'article"
-        priority
-        className="rounded-lg mt-8 border"
-      />
+      <div className="flex justify-center">
+        <Image
+          src={urlFor(data.titleImage).url()}
+          width={800}
+          height={800}
+          alt="Image de l'article"
+          priority
+          className="rounded-lg mt-8 border"
+        />
+      </div>
 
       <div className="mt-16 prose prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
         <PortableText value={data.content} />
